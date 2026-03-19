@@ -15,6 +15,7 @@ import com.hmall.common.utils.BeanUtils;
 import com.hmall.common.utils.CollUtils;
 import com.hmall.common.utils.UserContext;
 import lombok.RequiredArgsConstructor;
+import lombok.var;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -47,6 +48,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     public void addItem2Cart(CartFormDTO cartFormDTO) {
         // 1.获取登录用户
         Long userId = UserContext.getUser();
+        UserContext.getUser()
 
         // 2.判断是否已经存在
         if(checkItemExists(cartFormDTO.getItemId(), userId)){
